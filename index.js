@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const app = express ();
 
 // create application/json parser
-var jsonParser = bodyParser.json()
+var jsonParser = bodyParser.json(({ type : 'application/json'}))
 
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -23,7 +23,7 @@ console.log("het werkt");
 console.log(process.env.BASE_URI);
 
 // Set up default mongoose connection
-const mongoDB = "mongodb://127.0.0.1/gamesnp";
+const mongoDB = "mongodb://127.0.0.1/games";
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Get the default connection
